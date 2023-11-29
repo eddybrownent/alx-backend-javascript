@@ -10,7 +10,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     await uploadPhoto(fileName);
     result = [...result, { status: 'fulfilled', value: 'Photo uploaded successfully' }];
   } catch (error) {
-    result = [...result, { status: 'rejected', value: 'Error Occured' }];
+    result = [...result, { status: 'rejected', value: `Error: ${fileName} cannot be processed` }];
   }
 
   return result;
