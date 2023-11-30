@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/extensions
 import { uploadPhoto, createUser } from './utils.js';
 
 export default async function asyncUploadUser() {
