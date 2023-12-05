@@ -2,10 +2,13 @@ export default function cleanSet(set, startString) {
   if (!startString || !startString.length) {
     return '';
   }
-  const resultString = Array.from(set)
-    .filter((value) => value.startsWith(startString))
-    .map((value) => value.slice(startString.length))
-    .join('-');
+  let resultString = '';
 
-  return resultString;
+  for (const value of set) {
+    if (value.startsWith(startString)) {
+      resultString += `${value.slice(startString.length)}-`;
+    }
+  }
+
+  return resultString.slice(0, -1);
 }
