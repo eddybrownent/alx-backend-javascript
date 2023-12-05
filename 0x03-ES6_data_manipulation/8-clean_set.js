@@ -11,6 +11,5 @@ export default function cleanSet(set, startString) {
     }
   }
 
-  // Remove the trailing hyphen before returning
-  return resultString.slice(0, -1);
+  return resultString.slice(0, resultString.length - 1);
 }
