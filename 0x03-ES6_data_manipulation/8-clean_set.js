@@ -6,10 +6,9 @@ export default function cleanSet(set, startString) {
   }
 
   for (const value of set) {
-    if (value.startsWith(startString)) {
+    if (value && value.startsWith(startString)) {
       resultString += `${value.slice(startString.length)}-`;
     }
   }
-
-  return resultString.slice(0, resultString.length -1);
+  return resultString.slice(0, -1);
 }
