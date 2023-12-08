@@ -1,4 +1,3 @@
-// 100-weak.js
 const weakMap = new WeakMap();
 
 function queryAPI(endpoint) {
