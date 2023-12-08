@@ -2,7 +2,7 @@ export default function cleanSet(set, startString) {
   let resultString = '';
 
   if (!startString || !startString.length) {
-    return '"Execution not successful"';
+    return resultString;
   }
 
   for (const value of set) {
@@ -11,5 +11,5 @@ export default function cleanSet(set, startString) {
     }
   }
 
-  return resultString.slice(0, -1);
+  return resultString.slice(0, resultString.length -1);
 }
