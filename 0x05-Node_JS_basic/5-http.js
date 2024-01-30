@@ -37,7 +37,7 @@ async function countStudents(fileName, response) {
   try {
     const data = await readFile(fileName, 'utf-8');
     response.write('This is the list of our students\n');
-    parseCSVData(data, response);
+    await parseCSVData(data, response);
   } catch (error) {
     response.statusCode = 404;
     response.end('Cannot load the database');
