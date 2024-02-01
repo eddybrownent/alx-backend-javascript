@@ -27,7 +27,7 @@ function parseCSVData(data, response) {
 
   for (const [key, value] of Object.entries(fields)) {
     if (key !== 'field') {
-      response.write(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}\n`);
+      response.write(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
     }
   }
   response.end();
@@ -40,6 +40,7 @@ async function countStudents(fileName, response) {
     await parseCSVData(data, response);
   } catch (error) {
     response.statusCode = 404;
+    response.write('This is the list of our students\n');
     response.end('Cannot load the database');
   }
 }
