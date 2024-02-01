@@ -54,7 +54,9 @@ app.get('/students', async (request, response) => {
     const output = await countStudents(process.argv[2].toString());
     response.send(['This is the list of our students', output].join('\n'));
   } catch (error) {
-    response.status(404).send('Cannot load the database');
+    response.statusCode = 404;
+    response.write('This is the list of our students\n');
+    response.end('Cannot load the database');
   }
 });
 
