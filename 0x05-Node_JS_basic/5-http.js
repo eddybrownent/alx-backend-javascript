@@ -27,7 +27,7 @@ function parseCSVData(data, response) {
 
   for (const [key, value] of Object.entries(fields)) {
     if (key !== 'field') {
-      response.write(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
+      response.write(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}\n`);
     }
   }
   response.end();
