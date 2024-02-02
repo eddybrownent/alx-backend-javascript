@@ -14,7 +14,7 @@ class StudentsController {
           }).join('\n')}`);
       })
       .catch((error) => {
-        res.status(500).send(`Cannot load the database. ${error.message}`);
+        res.status(500).send(`Cannot load the database`);
       });
   }
 
@@ -28,13 +28,17 @@ class StudentsController {
 
     readDatabase(process.argv[2].toString())
       .then((data) => {
+	if (!data[major]) {
+        res.res.status(500).send('Cannot load the database');
+        return;
+      }
         const studentsInMajor = data[major] || [];
         const firstNamesList = studentsInMajor.join(', ');
 
         res.status(200).send(`List: ${firstNamesList}`);
       })
       .catch((error) => {
-        res.status(500).send(`Cannot load the database. ${error.message}`);
+        res.status(500).send(`Cannot load the database`);
       });
   }
 }
