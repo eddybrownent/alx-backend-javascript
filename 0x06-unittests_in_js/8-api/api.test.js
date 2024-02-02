@@ -1,5 +1,4 @@
 const request = require('request');
-const app = require('./api');
 const { expect } = require('chai');
 
 describe('API Tests', () => {
