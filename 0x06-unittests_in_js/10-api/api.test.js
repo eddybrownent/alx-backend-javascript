@@ -46,7 +46,7 @@ describe('API Tests', () => {
 
   describe('Available Payments', () => {
     it('should return the correct payments methods', (done) => {
-      request('http://localhost:7865/available_payments', (error, response, body) {
+      request('http://localhost:7865/available_payments', (error, response, body) => {
 	const responseBody = JSON.parse(body);
         expect(responseBody).to.deep.equal({
           payment_methods: {
