@@ -30,6 +30,7 @@ describe('API Tests', () => {
       const cartId = 142;
       request(`http://localhost:7865/cart/${cartId}`, (error, response, body) => {
         expect(response.statusCode).to.equal(200);
+        expect(body).to.equal('Payment methods for cart 142');
 	done();
       });
     });
