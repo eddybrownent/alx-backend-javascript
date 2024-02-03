@@ -15,4 +15,8 @@ app.get('/cart/:id([0-9]+)', (req, res) => {
   res.status(200).send(`Payment methods for cart ${req.params.id}`);
 });
 
+app.get('/cart/:id(*)', (req, res) => {
+  res.status(404).send(`Cannot accept ${req.params.id} not a number`);
+});
+
 module.exports = app;
