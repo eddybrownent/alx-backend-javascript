@@ -33,7 +33,7 @@ app.get('/available_payments', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
- const { userName } = req.body;
+ const userName  = req.body.userName;
  res.status(200).send(`Welcome ${userName}`)
 });
 
